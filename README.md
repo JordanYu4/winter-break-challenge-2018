@@ -23,4 +23,4 @@ Things you may want to cover:
 
 * ...
 
-Source code by Alex Kong, Dasol Jung 
+Source code by Alex Kong, Dasol Jung, Kim van Alstine 
