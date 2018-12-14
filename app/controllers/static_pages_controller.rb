@@ -3,11 +3,12 @@ class StaticPagesController < ApplicationController
     end
    
     def sharings
-        @comments = Posts.page(params[:page]).order('created_at DESC')
+        @posts = Post.page(params[:page]).order('created_at DESC')
     end 
 
-    def stats
-        
+    def submit_post
+        @post = Post.new
     end
+
 
 end
