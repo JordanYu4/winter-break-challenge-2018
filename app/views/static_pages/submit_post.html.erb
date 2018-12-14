@@ -1,4 +1,8 @@
-<div class="container">
+
+<div class="content-section-a">
+    <div class="container">
+        <hr class="section-heading-spacer">
+
         <div class="row">
             <hr class="section-heading-spacer">
             <div class="clearfix"></div>
@@ -18,32 +22,33 @@
                         </div>
 
                         <div class="form-group">
-                            <%= f.label :content, "Sharing" %>
-                            <%= f.text_area :content, { :class => "form-control", rows: "5"} %>
+                            <%= f.label :sharing_content, "Sharing" %>
+                            <%= f.text_area :sharing_content, { :class => "form-control", rows: "5"} %>
                         </div>
 
                         <div class="form-group">
-                            <%= f.label :content, "Life update?" %>
-                            <%= f.text_area :content, { :class => "form-control", rows: "3"} %>
+                            <%= f.label :life_update, "Life update?" %>
+                            <%= f.text_area :life_update, { :class => "form-control", rows: "3"} %>
                         </div>
                     </div>
                 
 
-                    <div class="col-lg-6">
+                    <%# <div class="col-lg-6">
 
                         <div class="form-group">
                             <%= f.label :avatar, "Upload a Picture" %>
-                            <%= f.file_field :avatar, { :class => "form-control"} %>
-                        </div>
+                            <%# <%= f.file_field :avatar, { :class => "form-control"} %>
+                        <%# </div> %>
 
-                        <div class="form-group">
-                            <%= f.label :video, "Upload a Video" %>
-                            <%= f.file_field :video, { :class => "form-control"} %>
-                        </div>
-                    </div>
+                        <%# <div class="form-group"> %>
+                            <%# <%= f.label :video, "Upload a Video" %> 
+                            <%# <%= f.file_field :video, { :class => "form-control"} %> 
+                        <%# </div> %>
+                    <%# </div> %> 
 
                     <%= f.submit "Submit sharing", class: "btn btn-primary btn-lg btn-block" %>
                 <% end %>
             </div>
         </div>
     </div>
+</div>

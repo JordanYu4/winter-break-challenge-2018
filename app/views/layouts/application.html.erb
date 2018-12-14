@@ -12,7 +12,7 @@
   </head>
 
   <body>
-  <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+  <nav id="menu" class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
     <div class="container topnav">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -22,8 +22,10 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <%= link_to image_tag(asset_path("a2f_logo.png"), :size => "50x50"), root_path, class: "navbar-brand topnav" %>
-            <h2>a2f Ohana</h2>
+            <%= link_to(root_path, class: "navbar-brand navbar-header") do %>
+                <%= image_tag(asset_path("a2f_logo.png"), :size => "60x60") %>
+                <h2>a2f Ohana</h2>
+            <% end %>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse">

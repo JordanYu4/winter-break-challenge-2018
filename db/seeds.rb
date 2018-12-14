@@ -6,20 +6,31 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Category.delete_all
-Mission.delete_all
-
-sg = Category.create!(mission_type: 'Spiritual Growth')
-ev = Category.create!(mission_type: 'Evangelism')
-ser = Category.create!(mission_type: 'Service/Gratitude')
-equ = Category.create!(mission_type: 'Equipping')
+Post.delete_all
 
 # service/gratitude
-Mission.create!(name: 'Do chores (laundry, dishes, take out the trash) at home (max: 40)', points: 10, category: ser)
-Mission.create!(name: 'Write a "Thank you" note to someone who is not your peer', points: 20, category: ser)
-Mission.create!(name: 'Learn a new dish', points: 20, category: ser)
-Mission.create!(name: '10 Days of Gratitude Journal (10 entries/day)', points: 50, category: ser)
-Mission.create!(name: 'Host Dinner for Your Family and/or Friends)', points: 60, category: ser)
+Post.create!(
+    author: 'Jordan Yu', 
+    sharing_content: 'I appreciate Tim Keller\'s shiny bald head', 
+    life_update: 'Gained 10 pounds')
+Post.create!(
+    author: 'Uvaldo Chavez', 
+    sharing_content: 'I rededicated my life to Jesus after reading chapter 1', 
+    life_update: 'Benched 500 pounds')
+Post.create!(
+    author: 'Julia Liang', 
+    sharing_content: 'They shall call his name Immanuel (which means, God with us.)', 
+    life_update: 'Designed things')
+Post.create!(
+    author: 'Frances Kim', 
+    sharing_content: 'Do not be conformed to this world, but be transformed by the renewal
+        of your mind, that by testing you may discern what is the will of God, what is good 
+        and acceptable and perfect', 
+    life_update: 'Visited my peer Hannah in Minnesota!')
+Post.create!(
+    author: 'Vincent Hu', 
+    sharing_content: 'I was really blessed by the reading. Give me a call and find out why', 
+    life_update: 'Balled all day long')
 
 
 

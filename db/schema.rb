@@ -10,14 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181214211411) do
+ActiveRecord::Schema.define(version: 20181214231853) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "posts", force: :cascade do |t|
     t.string   "author",              null: false
-    t.text     "content",             null: false
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
@@ -32,6 +31,8 @@ ActiveRecord::Schema.define(version: 20181214211411) do
     t.datetime "video_updated_at"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
+    t.text     "sharing_content"
+    t.text     "life_update"
     t.index ["author"], name: "index_posts_on_author", using: :btree
   end
 
