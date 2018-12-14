@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   root "static_pages#home"
-  get 'challenges', to: 'static_pages#challenges'
-  get 'completed', to: 'static_pages#completed'
-  get 'stats', to: 'static_pages#stats'
+  # get 'challenges', to: 'static_pages#challenges'
+  get 'sharings', to: 'static_pages#sharings'
+  get 'submit_post', to: 'static_pages#submit_post'
+  # get 'stats', to: 'static_pages#stats'
   resources :comments, only: [:create]
   resources :comment
   resources :sg
