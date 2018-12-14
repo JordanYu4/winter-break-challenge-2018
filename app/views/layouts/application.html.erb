@@ -3,13 +3,12 @@
   <head>
     <script src="js/bootstrap.min.js"></script>
 
-    <title>All-Soph 2018 Christmas Challenge</title>
+    <title>a2f Ohana Winter Reading Challenge</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_link_tag 'application','https://fonts.googleapis.com/css?family=Lato', media: 'all', 'data-turbolinks-track' => true %>
+    <%# <%= stylesheet_link_tag 'application','https://fonts.googleapis.com/css?family=Lato', media: 'all', 'data-turbolinks-track' => true %> 
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= favicon_link_tag asset_path('top_hat_favicon.gif'), :rel => 'icon', :type =>  'image/gif' %>
+    <%= favicon_link_tag asset_path('a2f_logo_inverted.png'), :rel => 'icon', :type =>  'image/png' %>
   </head>
 
   <body>
@@ -23,11 +22,15 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <%= link_to image_tag(asset_path("greatest-show.png"), :size => "100x46"), root_path, class: "navbar-brand topnav" %>
+            <%= link_to image_tag(asset_path("a2f_logo.png"), :size => "50x50"), root_path, class: "navbar-brand topnav" %>
+            <h2>a2f Ohana</h2>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <%= link_to "Home", root_path %>
+                </li>
                 <li>
                     <%= link_to "Challenges", challenges_path %>
                 </li>
