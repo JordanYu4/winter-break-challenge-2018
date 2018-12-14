@@ -1,4 +1,4 @@
-class Comment < ApplicationRecord
+class Post < ApplicationRecord
 	self.per_page = 15
 
 	belongs_to :mission
