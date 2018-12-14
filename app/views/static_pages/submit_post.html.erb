@@ -1,0 +1,76 @@
+<div class="container">
+        <div class="row">
+            <hr class="section-heading-spacer">
+            <div class="clearfix"></div>
+            <h2>Share your thoughts</h2>
+
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <%= form_for @comment, :html => {:role => 'form'} do |f| %>
+
+                    <div class="col-lg-6">
+                        <%= render 'shared/error_messages' %>
+                        <div class="form-group">
+                            <%= f.label :name, "Name (first and last)" %>
+                            <%= f.text_field :name, { :class => "form-control"} %>
+                        </div>
+
+                        <div class="form-group">
+                            <%= f.label :content, "Sharing" %>
+                            <%= f.text_area :content, { :class => "form-control", rows: "5"} %>
+                        </div>
+
+                        <div class="form-group">
+                            <%= f.label :content, "Life update?" %>
+                            <%= f.text_area :content, { :class => "form-control", rows: "3"} %>
+                        </div>
+                    </div>
+                
+
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <%= f.label :mission_id, "Challenge" %>
+
+                            <select class="form-control" name="comment[mission_id]" id="comment_mission_id">
+                                <option value>Select Challenge</option>
+                                <optgroup label="Spiritual Growth">Spiritual Growth
+                                    <% @sg.each do |mission| %>
+                                    <option value=<%= mission.id %>><%= mission.name %> - <%= mission.points%> points</option>
+                                    <% end %>
+                                </optgroup>
+                                <optgroup label="Evangelism">Evangelism
+                                    <% @evangelism.each do |mission| %>
+                                    <option value=<%= mission.id %>><%= mission.name %> - <%= mission.points%> points</option>
+                                    <% end %>
+                                </optgroup>
+                                <optgroup label="Service/Gratitude">Service/Gratitude
+                                    <% @ser.each do |mission| %>
+                                    <option value=<%= mission.id %>><%= mission.name %> - <%= mission.points%> points</option>
+                                    <% end %>
+                                </optgroup>
+                                <optgroup label="Equipping">Equipping
+                                    <% @eq.each do |mission| %>
+                                    <option value=<%= mission.id %>><%= mission.name %> - <%= mission.points%> points</option>
+                                    <% end %>
+                                </optgroup>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <%= f.label :avatar, "Upload a Picture" %>
+                            <%= f.file_field :avatar, { :class => "form-control"} %>
+                        </div>
+
+                        <div class="form-group">
+                            <%= f.label :video, "Upload a Video" %>
+                            <%= f.file_field :video, { :class => "form-control"} %>
+                        </div>
+                    </div>
+
+                    <%= f.submit "Submit sharing", class: "btn btn-primary btn-lg btn-block" %>
+                <% end %>
+            </div>
+        </div>
+    </div>
