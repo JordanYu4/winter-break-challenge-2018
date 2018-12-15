@@ -13,18 +13,13 @@
     font-weight: 400;
 }
 
-.completed-background {
+[class^='background-'] {
     position: fixed;
     height: 100%;
     width: 100%;
-    background: image-url('a2f_ohana_hg.jpg') no-repeat center center;
     background-size: cover;
     background-attachment: fixed;
     z-index: -1;
-}
-
-.completed {
-    padding: 85px 0px;
 }
 
 .network-name {
