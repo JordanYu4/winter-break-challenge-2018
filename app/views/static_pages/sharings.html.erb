@@ -1,8 +1,8 @@
-<div class="completed-background">
+<div class="background-sharings">
 </div>
 
 <div class="content-section-a transparent-background">
-	<div class="container completed">
+	<div class="container">
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="panel panel-default">
@@ -27,20 +27,18 @@
 						<div> 
 						<% @posts.each do |post| %>
 							<div class="all-comments">
-								<div class="comment-name"> <%= post.author %></div>
-								<div class="comment-timestamp"> <%= post.created_at.in_time_zone.to_time.strftime('%B %e at %l:%M %p') %></div>
+								<h2 class="comment-name"> <%= post.author %></h2>
+								<span class="comment-timestamp"> <%= post.created_at.in_time_zone.to_time.strftime('%B %e at %l:%M %p') %></span>
+								<hr>
 								<div class="comment-media">
 									<% if post.video.file? %>
 										Click to see the video:
 										<br>
 										<%=link_to image_tag(post.video.url(:thumb)), post.video.url(:original), :popup=>['original_image', 'height=700,width=900'] %>	
-									<% else %>
-											<div></div>
-									<% end %>
-									<% if post.avatar.file? %>							
+									<% elsif post.avatar.file? %>							
 										<%=link_to image_tag(post.avatar.url(:original)), post.avatar.url(:original), :popup=>['original_image', 'height=700,width=900'] %>	
 									<% else %>
-											<div></div>
+										<div></div>
 									<% end %>
 								</div>
 								<div class="comment-content">
@@ -51,6 +49,7 @@
 								</div>
 								<div class="comment-content">
 									<% if post.life_update != nil %>
+										<h3>Life Update</h3>
 										<%= post.life_update %>
 									<% end %>
 									<hr>
