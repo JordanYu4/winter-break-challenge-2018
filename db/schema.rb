@@ -10,44 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170521033301) do
+ActiveRecord::Schema.define(version: 20181214231853) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "categories", force: :cascade do |t|
-    t.string   "mission_type"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-  end
-
-  create_table "comments", force: :cascade do |t|
-    t.string   "name"
-    t.string   "content"
-    t.string   "team"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
-    t.integer  "mission_id"
+  create_table "posts", force: :cascade do |t|
+    t.string   "author",              null: false
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
     t.string   "video_file_name"
     t.string   "video_content_type"
     t.integer  "video_file_size"
     t.datetime "video_updated_at"
-    t.index ["mission_id"], name: "index_comments_on_mission_id", using: :btree
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.text     "sharing_content"
+    t.text     "life_update"
+    t.index ["author"], name: "index_posts_on_author", using: :btree
   end
 
-  create_table "missions", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "points"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.integer  "category_id"
-    t.index ["category_id"], name: "index_missions_on_category_id", using: :btree
-  end
-
-  add_foreign_key "comments", "missions"
-  add_foreign_key "missions", "categories"
 end

@@ -2,4 +2,20 @@
 
 .navbar {
     background-color: $accent;
+    line-height: 3em;
+    padding: 10px; 
+    h2 {
+        margin-left: 0.5em;
+    }
+}
+
+#menu {
+    a {
+        color: #fff !important;
+    }
+}
+
+.navbar-header {
+    display: flex;
+    align-items: center;
 }

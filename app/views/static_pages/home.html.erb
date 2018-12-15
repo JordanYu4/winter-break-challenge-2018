@@ -6,9 +6,7 @@
                     <h1><span class="intro-count">Hidden Christmas</span> Winter Reading Challenge</h1>
                     <hr>
                     <p>
-                        Do not be conformed to this world, but be transformed by the renewal of your mind, 
-                        that by testing you may discern what is the will of God, what is good and acceptable 
-                        and perfect. // Romans 12:2 
+                        Share your thoughts on our reading and let us know what you're up to!
                     </p>
                     <hr>
                 </div>
@@ -28,32 +26,6 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-5 col-sm-6">
-                <hr class="section-heading-spacer">
-                <div class="clearfix"></div>
-                <h2 class="section-heading">The Challenge</h2>
-                <p class="lead">
-
-                    It’s on! How will you spend your winter break? It’s a battle of the trios as, Klesis, A2F and MakeNew 
-                    duke it out to see who will win. Complete each of the Winter Challenges to get points for your team 
-                    and grow closer together as a class. Try having some friends over for a new dish or calling your peers 
-                    over video chat! How will you make the best use of your time this break? 
-                </p>
-            </div>
-            <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-            	<hr class="section-heading-spacer">
-                <div class="clearfix"></div>
-                <h2 class="section-heading">Rules</h2>
-                <ul class="lead">
-                	<li>
-                		Complete a challenge and log!
-                	</li>
-                    <li>
-                        Adding photos and videos generate more points and it’s so much more fun
-                    </li>
-                    <li>
-                        Try doing it with your peers, it might increase your points! ;)
-                    </li>
-                </ul>
             </div>
         </div>
 
@@ -64,82 +36,7 @@
 <!-- /.content-section-a -->
 
 <div class="content-section-b">
-    <div class="container">
-        <div class="row">
-            <hr class="section-heading-spacer">
-            <div class="clearfix"></div>
-            <h2>Share your thoughts</h2>
-
-        </div>
-
-        <div class="row">
-            <div class="col-lg-12">
-                <%= form_for @comment, :html => {:role => 'form'} do |f| %>
-
-                    <div class="col-lg-6">
-                        <%= render 'shared/error_messages' %>
-                        <div class="form-group">
-                            <%= f.label :name, "Name (first and last)" %>
-                            <%= f.text_field :name, { :class => "form-control"} %>
-                        </div>
-
-                        <div class="form-group">
-                            <%= f.label :content, "Sharing" %>
-                            <%= f.text_area :content, { :class => "form-control", rows: "5"} %>
-                        </div>
-
-                        <div class="form-group">
-                            <%= f.label :content, "Life update?" %>
-                            <%= f.text_area :content, { :class => "form-control", rows: "3"} %>
-                        </div>
-                    </div>
-                
-
-                    <div class="col-lg-6">
-                        <div class="form-group">
-                            <%= f.label :mission_id, "Challenge" %>
-
-                            <select class="form-control" name="comment[mission_id]" id="comment_mission_id">
-                                <option value>Select Challenge</option>
-                                <optgroup label="Spiritual Growth">Spiritual Growth
-                                    <% @sg.each do |mission| %>
-                                    <option value=<%= mission.id %>><%= mission.name %> - <%= mission.points%> points</option>
-                                    <% end %>
-                                </optgroup>
-                                <optgroup label="Evangelism">Evangelism
-                                    <% @evangelism.each do |mission| %>
-                                    <option value=<%= mission.id %>><%= mission.name %> - <%= mission.points%> points</option>
-                                    <% end %>
-                                </optgroup>
-                                <optgroup label="Service/Gratitude">Service/Gratitude
-                                    <% @ser.each do |mission| %>
-                                    <option value=<%= mission.id %>><%= mission.name %> - <%= mission.points%> points</option>
-                                    <% end %>
-                                </optgroup>
-                                <optgroup label="Equipping">Equipping
-                                    <% @eq.each do |mission| %>
-                                    <option value=<%= mission.id %>><%= mission.name %> - <%= mission.points%> points</option>
-                                    <% end %>
-                                </optgroup>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <%= f.label :avatar, "Upload a Picture" %>
-                            <%= f.file_field :avatar, { :class => "form-control"} %>
-                        </div>
-
-                        <div class="form-group">
-                            <%= f.label :video, "Upload a Video" %>
-                            <%= f.file_field :video, { :class => "form-control"} %>
-                        </div>
-                    </div>
-
-                    <%= f.submit "Submit sharing", class: "btn btn-primary btn-lg btn-block" %>
-                <% end %>
-            </div>
-        </div>
-    </div>  
+      
 </div>
 
 
