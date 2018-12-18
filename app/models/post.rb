@@ -36,7 +36,10 @@ class Post < ApplicationRecord
     validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
     validates_attachment_content_type :video, content_type: /\Avideo\/.*\z/
 
-    
+    def thumbnail 
+        self.image.variant(resize: '300x300')
+    end
+
     def is_type_of_video?
         video.content_type =~ %r(video)
     end
