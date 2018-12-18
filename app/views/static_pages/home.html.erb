@@ -22,25 +22,53 @@
 <!-- Page Content -->
 
 <div class="content-section-a">
-
     <div class="container">
-        <div class="row">
-            <div class="col-lg-5 col-sm-6">
-            </div>
-        </div>
-
-    </div>
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<% if @posts.length == 0 %>
+							<div></div>
+						<% end %>
+					</div>
+					<div class="post-grid all-comments">
+						
+						<% @posts.each do |post| %>
+							<div class="post-preview all-comments">
+								<h2 class="comment-name"> <%= post.author %></h2>
+								<div class="post-preview-media">
+									<%# if post.video.file? %>
+										<%# <br> %>
+										<%# <%=link_to image_tag(post.video.url(:thumb)), post.video.url(:original), :popup=>['original_image', 'height=700,width=900'] %>	 
+									<%# <% elsif post.avatar.file? %>							 
+										<%# <%=link_to image_tag(post.avatar.url(:original)), post.avatar.url(:original), :popup=>['original_image', 'height=700,width=900'] %>	 
+									<%# <% else %> 
+										<%# <div></div> %>
+									<%# <% end %> 
+                                    <% random_thumb = rand(5) + 1%>
+                                    <%=image_tag("cafe-0#{random_thumb}.jpg", 
+                                        alt: "random cafe thumbnail",
+                                        size: '300x300') %>
+								</div> 
+								<div class="post-preview-text">
+									<% if post.sharing_content != nil %>
+										<%= post.sharing_content %>
+									<% elsif post.life_update != nil %>
+										<%= post.life_update %>
+									<% end %>
+								</div>
+							</div>
+						<% end %>
+						
+						
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
     <!-- /.container -->
 
 </div>
 <!-- /.content-section-a -->
-
-<div class="content-section-b">
-      
-</div>
-
-
-<div class="content-section-a">
-
-</div>
 

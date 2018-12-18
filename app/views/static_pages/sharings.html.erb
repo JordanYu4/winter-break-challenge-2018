@@ -30,17 +30,17 @@
 								<h2 class="comment-name"> <%= post.author %></h2>
 								<span class="comment-timestamp"> <%= post.created_at.in_time_zone.to_time.strftime('%B %e at %l:%M %p') %></span>
 								<hr>
-								<div class="comment-media">
+								<%# <div class="comment-media">
 									<% if post.video.file? %>
-										Click to see the video:
-										<br>
-										<%=link_to image_tag(post.video.url(:thumb)), post.video.url(:original), :popup=>['original_image', 'height=700,width=900'] %>	
-									<% elsif post.avatar.file? %>							
-										<%=link_to image_tag(post.avatar.url(:original)), post.avatar.url(:original), :popup=>['original_image', 'height=700,width=900'] %>	
-									<% else %>
-										<div></div>
-									<% end %>
-								</div>
+										<%# Click to see the video: %>
+										<%# <br> %>
+										<%# <%=link_to image_tag(post.video.url(:thumb)), post.video.url(:original), :popup=>['original_image', 'height=700,width=900'] %>	
+									<%# <% elsif post.avatar.file? %>							
+										<%# <%=link_to image_tag(post.avatar.url(:original)), post.avatar.url(:original), :popup=>['original_image', 'height=700,width=900'] %>	
+									<%# <% else %>
+										<%# <div></div> %>
+									<%# <% end %>
+								<%# </div> %>
 								<div class="comment-content">
 									<% if post.sharing_content != nil %>
 										<%= post.sharing_content %>
