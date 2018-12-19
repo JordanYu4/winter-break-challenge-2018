@@ -8,7 +8,6 @@
                     <p class="lead">
                         Share your thoughts on our reading and let us know what you're up to!
                     </p>
-                    <hr>
                 </div>
             </div>
         </div>
@@ -25,9 +24,11 @@
                 <div></div>
             <% end %>
         </div>
-        <div class="row">
+        <div class="row post-preview-grid-row">
             <% @posts.each do |post| %>
-                <div class="post-preview col-md-4 col-sm-6">
+                <div class="post-preview col-md-4 col-sm-6 col-xs-12"
+                    style="background:image-url('cafe-0{random_thumb}.jpg"
+                >
                     <h2 class=""> <%= post.author %></h2>
                     <div class="post-preview-text">
                         <% if post.sharing_content != nil %>
