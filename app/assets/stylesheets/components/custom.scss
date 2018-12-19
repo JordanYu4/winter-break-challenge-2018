@@ -5,14 +5,14 @@
     background: transparent !important;
 }
 
-.post-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 25vw);
-    grid-template-rows: repeat(3, 25vw);
-    grid-gap: 1em;
+// .post-grid {
+//     display: grid;
+//     grid-template-columns: repeat(3, 25vw);
+//     grid-template-rows: repeat(3, 25vw);
+//     grid-gap: 1em;
     
-    @media screen and (max-width: 1000px) {
-        grid-template-columns: repeat(2, 40vw);
-        grid-template-rows: repeat(6, 40vw);
-    }
-}
+//     @media screen and (max-width: 1000px) {
+//         grid-template-columns: repeat(2, 40vw);
+//         grid-template-rows: repeat(6, 40vw);
+//     }
+// }

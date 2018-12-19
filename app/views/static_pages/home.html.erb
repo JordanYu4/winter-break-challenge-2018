@@ -5,70 +5,58 @@
                 <div class="intro-message">
                     <h1><span class="intro-count">Hidden Christmas</span> Winter Reading Challenge</h1>
                     <hr>
-                    <p>
+                    <p class="lead">
                         Share your thoughts on our reading and let us know what you're up to!
                     </p>
                     <hr>
                 </div>
             </div>
         </div>
-
     </div>
-    <!-- /.container -->
-
 </div>
-<!-- /.intro-header -->
 
 <!-- Page Content -->
 
 <div class="content-section-a">
     <div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<div class="panel panel-default">
-					<div class="panel-body">
-						<% if @posts.length == 0 %>
-							<div></div>
-						<% end %>
-					</div>
-					<div class="post-grid all-comments">
-						
-						<% @posts.each do |post| %>
-							<div class="post-preview all-comments">
-								<h2 class="comment-name"> <%= post.author %></h2>
-								<div class="post-preview-media">
-									<%# if post.video.file? %>
-										<%# <br> %>
-										<%# <%=link_to image_tag(post.video.url(:thumb)), post.video.url(:original), :popup=>['original_image', 'height=700,width=900'] %>	 
-									<%# <% elsif post.avatar.file? %>							 
-										<%# <%=link_to image_tag(post.avatar.url(:original)), post.avatar.url(:original), :popup=>['original_image', 'height=700,width=900'] %>	 
-									<%# <% else %> 
-										<%# <div></div> %>
-									<%# <% end %> 
-                                    <% random_thumb = rand(5) + 1%>
-                                    <%=image_tag("cafe-0#{random_thumb}.jpg", 
-                                        alt: "random cafe thumbnail",
-                                        size: '300x300')%>
-								</div> 
-								<div class="post-preview-text">
-									<% if post.sharing_content != nil %>
-										<%= post.sharing_content %>
-									<% elsif post.life_update != nil %>
-										<%= post.life_update %>
-									<% end %>
-								</div>
-							</div>
-						<% end %>
-						
-						
-						</div>
-					</div>
-				</div>
-			</div>
+        <h1>Latest posts:</h1>
+        <div class="no-post-placeholder">
+            <% if @posts.length == 0 %>
+                <div></div>
+            <% end %>
+        </div>
+        <div class="row">
+            <% @posts.each do |post| %>
+                <div class="post-preview col-md-4 col-sm-6">
+                    <h2 class=""> <%= post.author %></h2>
+                    <div class="post-preview-text">
+                        <% if post.sharing_content != nil %>
+                            <p class="lead"><%= post.sharing_content %></p>
+                        <% elsif post.life_update != nil %>
+                            <p class="lead"><%= post.life_update %></p>
+                        <% end %>
+                    </div>
+                    <div class="post-preview-media">
+                        <%# if post.video.file? %>
+                            <%# <br> %>
+                            <%# <%=link_to image_tag(post.video.url(:thumb)), post.video.url(:original), :popup=>['original_image', 'height=700,width=900'] %>	 
+                        <%# <% elsif post.avatar.file? %>							 
+                            <%# <%=link_to image_tag(post.avatar.url(:original)), post.avatar.url(:original), :popup=>['original_image', 'height=700,width=900'] %>	 
+                        <%# <% else %> 
+                            <%# <div></div> %>
+                        <%# <% end %> 
+                        <% random_thumb = rand(5) + 1%>
+                        <%=image_tag("cafe-0#{random_thumb}.jpg", 
+                            alt: "random cafe thumbnail",
+                            size: '300x300')%>
+                    </div> 
+                </div>
+            <% end %>
+            
+            </div>
+            <hr>
+            <h3><%= link_to "Read more", sharings_path %></h3>
 		</div>
 	</div>
-    <!-- /.container -->
-
 </div>
-<!-- /.content-section-a -->
 
