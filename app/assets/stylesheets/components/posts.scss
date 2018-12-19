@@ -23,6 +23,13 @@
     @media screen and (max-width: 770px) {
         height: 45vw;
     }
+
+    &:hover {
+        .post-preview-text {
+            box-shadow: inset 0 0 0 100vw rgba(0, 0, 0, 0.3);
+            color: #fff;
+        }
+    }
 }
 
 .post-preview-text {
