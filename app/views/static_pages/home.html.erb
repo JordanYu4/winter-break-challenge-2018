@@ -26,18 +26,20 @@
         </div>
         <div class="row post-preview-grid-row">
             <% @posts.each do |post| %>
-                <div class="post-preview col-md-4 col-sm-6 col-xs-12"
-                    style="background:image-url('cafe-0{random_thumb}.jpg"
-                >
-                    <h2 class=""> <%= post.author %></h2>
+                <% random_thumb = image_path("cafe-0#{rand(5) + 1}.jpg") %>
+                <div class="post-preview col-md-4 col-sm-6 col-xs-12">
                     <div class="post-preview-text">
-                        <% if post.sharing_content != nil %>
-                            <p class="lead"><%= post.sharing_content %></p>
-                        <% elsif post.life_update != nil %>
-                            <p class="lead"><%= post.life_update %></p>
-                        <% end %>
+                        <h2 class=""> <%= post.author %></h2>
+                        <div>
+                            <% if post.sharing_content != nil %>
+                                <p class="lead"><%= post.sharing_content %></p>
+                            <% elsif post.life_update != nil %>
+                                <p class="lead"><%= post.life_update %></p>
+                            <% end %>
+                        </div>
                     </div>
-                    <div class="post-preview-media">
+                    <%= image_tag random_thumb, class: "post-preview-media"%>
+                    <%# <div class="post-preview-media"> %>
                         <%# if post.video.file? %>
                             <%# <br> %>
                             <%# <%=link_to image_tag(post.video.url(:thumb)), post.video.url(:original), :popup=>['original_image', 'height=700,width=900'] %>	 
@@ -46,11 +48,7 @@
                         <%# <% else %> 
                             <%# <div></div> %>
                         <%# <% end %> 
-                        <% random_thumb = rand(5) + 1%>
-                        <%=image_tag("cafe-0#{random_thumb}.jpg", 
-                            alt: "random cafe thumbnail",
-                            size: '300x300')%>
-                    </div> 
+                    <%# </div>  %>
                 </div>
             <% end %>
             
