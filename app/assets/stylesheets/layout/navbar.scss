@@ -1,0 +1,33 @@
+// Navbar styles 
+@import '../libs/variables';
+
+.navbar-inverse {
+    background-color: $accent;
+    font-size: 16px;
+    line-height: 3em;
+    padding: 10px; 
+    margin-bottom: 0;
+    border-radius: 0;
+
+    h2 {
+        margin-left: 0.5em;
+    }
+    
+    a {
+        color: #fff !important;
+    }
+
+    .nav-link {
+        opacity: 0.8 !important;
+        
+        &:hover {
+            opacity: 1 !important;
+            background: $accent !important;
+        }
+    }
+}
+
+.navbar-header {
+    display: flex;
+    align-items: center;
+}
