@@ -18,20 +18,23 @@
     z-index: -1;
 }
 
-.network-name {
-    text-transform: uppercase;
-    font-size: 14px;
-    font-weight: 400;
-    letter-spacing: 2px;
+[class^="content-section-"] {
+    padding: 50px 0 60px;
 }
 
 .content-section-a {
-    padding: 50px 0 60px;
     background-color: #f8f8f8;
 }
 
+.content-section-transparent {
+    background-color: none;
+}
+
+.content-section-top {
+    margin-top: 50px;
+}
+
 .content-section-b {
-    padding: 50px 0;
     border-top: 1px solid #e7e7e7;
     border-bottom: 1px solid #e7e7e7;
 }
@@ -46,53 +49,6 @@
     border-top: 3px solid #e7e7e7;
 }
 
-.banner {
-    padding: 100px 0;
-    color: #f8f8f8;
-    background: url(../images/soph_retreat.jpg) no-repeat center center;
-    background-size: cover;
-}
-
-.banner h2 {
-    margin: 0;
-    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
-    font-size: 3em;
-}
-
-.banner ul {
-    margin-bottom: 0;
-}
-
-.banner-social-buttons {
-    float: right;
-    margin-top: 0;
-}
-
-@media(max-width:1199px) {
-    ul.banner-social-buttons {
-        float: left;
-        margin-top: 15px;
-    }
-}
-
-@media(max-width:767px) {
-    .banner h2 {
-        margin: 0;
-        text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
-        font-size: 3em;
-    }
-
-    ul.banner-social-buttons > li {
-        display: block;
-        margin-bottom: 20px;
-        padding: 0;
-    }
-
-    ul.banner-social-buttons > li:last-child {
-        margin-bottom: 0;
-    }
-}
-
 p.copyright {
     margin: 15px 0 0;
 }
@@ -100,8 +56,8 @@ p.copyright {
 // <--------------------->
 
 .flash {
-    position: absolute;
+    position: fixed;
     z-index: 100;
-    top: 50px;
+    top: 80px;
     width: 100%;
 }
