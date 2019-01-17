@@ -42,14 +42,18 @@
 								<%# </div> %>
 								<div class="post-content">
 									<% if post.sharing_content != nil %>
-										<%= post.sharing_content %>
+										<div class="text-body">
+											<%= post.sharing_content %>
+										</div>
 									<% end %>
 									<hr>
 								</div>
 								<div class="post-content">
 									<% if post.life_update != nil %>
 										<h3>Life Update</h3>
-										<%= post.life_update %>
+										<div class="text-body">
+											<%= post.life_update %>
+										</div>
 									<% end %>
 									<hr>
 								</div>
